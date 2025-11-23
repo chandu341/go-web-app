@@ -32,17 +32,22 @@ jobs:
     - name: Test
       run: go test ./...
   
-  code-quality:
-    runs-on: ubuntu-latest
+code-quality:
+  runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+  steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v6
-      with:
-        version: v1.56.2
+  - name: Set up Go 1.22.5
+    uses: actions/setup-go@v2
+    with:
+      go-version: 1.22.5
+
+  - name: Run golangci-lint
+    uses: golangci/golangci-lint-action@v6
+    with:
+      version: v1.56.2
       # Ensure golangci-lint runs in the same Go environment used for the build.
       # This helps prevent import errors caused by a mismatched Go version.
       # If the error persists, consider using an earlier Go version (for example 1.21),
