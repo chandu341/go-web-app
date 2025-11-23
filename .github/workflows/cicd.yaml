@@ -43,7 +43,6 @@ code-quality:
     uses: actions/setup-go@v2
     with:
       go-version: 1.22.5
-
   - name: Run golangci-lint
     uses: golangci/golangci-lint-action@v6
     with:
