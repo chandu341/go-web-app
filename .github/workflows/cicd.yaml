@@ -42,7 +42,7 @@ jobs:
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.56.2
+        version: latest
       # Ensure golangci-lint runs in the same Go environment used for the build.
       # This helps prevent import errors caused by a mismatched Go version.
       # If the error persists, consider using an earlier Go version (for example 1.21),
